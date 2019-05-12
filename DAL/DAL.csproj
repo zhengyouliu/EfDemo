@@ -36,6 +36,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -47,11 +50,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DbBlog.cs" />
     <Compile Include="EfDbContext.cs" />
+    <Compile Include="Map\BlogMap.cs" />
+    <Compile Include="Map\PostMap.cs" />
+    <Compile Include="Migrations\201905120532144_first.cs" />
+    <Compile Include="Migrations\201905120532144_first.Designer.cs">
+      <DependentUpon>201905120532144_first.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905120540356_second.cs" />
+    <Compile Include="Migrations\201905120540356_second.Designer.cs">
+      <DependentUpon>201905120540356_second.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905120936176_xx.cs" />
+    <Compile Include="Migrations\201905120936176_xx.Designer.cs">
+      <DependentUpon>201905120936176_xx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -59,6 +77,17 @@
       <Project>{29164624-643e-46d6-a6f1-451cd331c90a}</Project>
       <Name>Entity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201905120532144_first.resx">
+      <DependentUpon>201905120532144_first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905120540356_second.resx">
+      <DependentUpon>201905120540356_second.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905120936176_xx.resx">
+      <DependentUpon>201905120936176_xx.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
